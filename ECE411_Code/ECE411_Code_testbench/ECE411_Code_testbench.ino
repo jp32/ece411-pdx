@@ -12,8 +12,8 @@ int Soilpower = 4; // Declare the power pin of the sensor
 int UserPower = 12; //Declare the power ping for user setting
 int Valvepower = 1;
 int count = 0;
-int M_UpperBound = 850;  // Upper bound of the moisture level
-int M_LowerBound = 757;  // Lower bound of the moisture level
+int M_UpperBound = 857;  // Upper bound of the moisture level
+int M_LowerBound = 750;  // Lower bound of the moisture level
 int sensorValue;         // The variable of the moisture value
 int UserValue;           // The variable of the user setting value    
 
@@ -71,7 +71,7 @@ void loop() {
       // serial print "done waiting two seconsd - reading moisture"
       sensorValue = readMoisture(); // Read the moisture level
       UserValue   = readUserSetting(); //Read the user setting
-      if (sensorValue <= M_LowerBound) {
+      if (sensorValue <= M_LowerBound && (sensorValue > 100) {
         Serial.print("Current moisture value = ");
         Serial.println(sensorValue);
         Serial.print("Current user value = ");

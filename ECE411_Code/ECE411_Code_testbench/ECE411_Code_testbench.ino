@@ -78,7 +78,7 @@ void loop() {
       if(testcmd == "1\n"){
         Serial.println("** ENTERED VALVE MODE *");
         Serial.println("** Choose debug function");
-        Serial.println("** Press 1 to open valve \n** Press 2 to close valve \n** Press 3 to open valve for x seconds");
+        Serial.println("** Press 1 to open valve \n** Press 2 to close valve \n** Press 3 to open valve for 5-30 seconds (potentiometer)");
         String valvecmd = Serial.readString();
 
         if(valvecmd == "1\n"){
@@ -89,7 +89,10 @@ void loop() {
           Serial.println("*** Closing valve");
           digitalWrite(Valvepower, LOW);
         }
-        
+        else if(valvecmd == "3\n"){
+          Serial.println("*** Opening valve for ");
+          
+        }
 
       }
       else if(testcmd == "2\n"){

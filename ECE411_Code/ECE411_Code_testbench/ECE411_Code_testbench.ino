@@ -70,7 +70,7 @@ void loop() {
     }
     else if (cmd == "test\n") {
       Serial.println("* ENTERED DEBUG MODE *");
-      Serial.println("* Choose debug function";
+      Serial.println("* Choose debug function");
       Serial.println("* Press 1 for valve functions \n* Press 2 for sensor functions");
       Serial.println("* Waiting for user input...");
       String testcmd = Serial.readString();
@@ -96,6 +96,7 @@ void loop() {
 
       }
       else if(testcmd == "2\n"){
+        // TODO:
         
       }
     }

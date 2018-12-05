@@ -104,7 +104,13 @@ void loop() {
         }
         else if(valvecmd == "3\n"){
           Serial.println("*** Opening valve for 5-30 seconds...");
-          
+          UserValue   = readUserSetting(); //Read the user setting
+          Serial.print("*** Delaying valve for ");
+          Serial.print(UserValue / 1000);
+          Serial.println(" seconds");
+          digitalWrite(Valvepower, HIGH);
+          delay(UserValue);
+          digitalWrite(Valvepower, LOW);
         }
 
       }

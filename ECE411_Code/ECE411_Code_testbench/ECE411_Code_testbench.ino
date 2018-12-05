@@ -15,7 +15,14 @@ int count = 0;
 int M_UpperBound = 857;  // Upper bound of the moisture level
 int M_LowerBound = 750;  // Lower bound of the moisture level
 int sensorValue;         // The variable of the moisture value
-int UserValue;           // The variable of the user setting value    
+int UserValue;           // The variable of the user setting value
+String greetString = "Enter Mode of Operation: \nrun - start normal operating procedure \ntest - enter test bench mode";
+
+char* sensorTestOptions[] = {
+  "1. Read sensor once",
+  "2. Read sensor x times",
+  "3. Read sensor x times and collect average"
+};
 
 void setup() {
   // Initial Setup
@@ -26,7 +33,7 @@ void setup() {
   digitalWrite(Soilpower, LOW); // Set to LOW so no power is flowing through the sensor
 
   while (!Serial);
-  Serial.println("Enter Mode of Operation: \n1. run - start normal operating procedure \n2. test - enter test bench mode");
+  Serial.println(greetString);
 }
 
 // Moisture Reading Function
@@ -45,7 +52,7 @@ int readUserSetting()
 {
   digitalWrite(UserPower, HIGH);  // Turn on voltage divider
   delay(10); // Wait 10 milliseconds
-  int val2 = ((pow(analogRead(UserSet),3)/13000) -1000);  // Read the user valve open time setting non-linear
+  int val2 = ((pow(analogRead(UserSet), 3) / 13000) - 1000); // Read the user valve open time setting non-linear
   Serial.print("Valve open value = ");
   Serial.println(val2);   // Print the value back to the serial port
   digitalWrite(UserPower, LOW); // Turn off voltage divider
@@ -86,23 +93,29 @@ void loop() {
       Serial.println("* Choose debug function");
       Serial.println("* Press 1 for valve functions \n* Press 2 for sensor functions");
       Serial.println("* Waiting for user input...");
+      while (Serial.available() == 0) {}
       String testcmd = Serial.readString();
 
-      if(testcmd == "1\n"){
+      if (testcmd == "1\n") {
         Serial.println("** ENTERED VALVE MODE *");
         Serial.println("** Choose debug function");
         Serial.println("** Press 1 to open valve \n** Press 2 to close valve \n** Press 3 to open valve for 5-30 seconds (potentiometer)");
+        while (Serial.available() == 0) {}
         String valvecmd = Serial.readString();
 
-        if(valvecmd == "1\n"){
+        if (valvecmd == "1\n") {
           Serial.println("*** Opening valve");
           digitalWrite(Valvepower, HIGH);
+          Serial.println(greetString);
+          return 0;
         }
-        else if(valvecmd == "2\n"){
+        else if (valvecmd == "2\n") {
           Serial.println("*** Closing valve");
           digitalWrite(Valvepower, LOW);
+          Serial.println(greetString);
+          return 0;
         }
-        else if(valvecmd == "3\n"){
+        else if (valvecmd == "3\n") {
           Serial.println("*** Opening valve for 5-30 seconds...");
           UserValue   = readUserSetting(); //Read the user setting
           Serial.print("*** Delaying valve for ");
@@ -111,12 +124,34 @@ void loop() {
           digitalWrite(Valvepower, HIGH);
           delay(UserValue);
           digitalWrite(Valvepower, LOW);
+          Serial.println(greetString);
+          return 0;
         }
 
       }
-      else if(testcmd == "2\n"){
-        // TODO:
-        
+      else if (testcmd == "2\n") {
+        Serial.println("** ENTERED VALVE MODE *");
+
+        PrintSensorTestOptions();
+
+        String sensorCmd = Serial.readString();
+        if (sensorCmd == "1\n")
+        {
+          Serial.println("Reading sensor once...");
+        }
+        else if (sensorCmd == "2\n")
+        {
+          Serial.println("Reading sensor x times...");
+        }
+        else if (sensorCmd == "3\n")
+        {
+          Serial.println("Reading sensor x times and collecting average...");
+        }
+        else
+        {
+          Serial.println("Invalid command!");
+          // TODO:
+        }
       }
     }
     else {
@@ -126,5 +161,13 @@ void loop() {
   }
   else {
 
+  }
+}
+
+void PrintSensorTestOptions()
+{
+  for (int i = 0; i < sizeof(sensorTestOptions) / sizeof(sensorTestOptions[0]); i++)
+  {
+    Serial.println(sensorTestOptions[i]);
   }
 }

@@ -16,7 +16,7 @@ int M_UpperBound = 850;  // Upper bound of the moisture level
 int M_LowerBound = 757;  // Lower bound of the moisture level
 int sensorValue;         // The variable of the moisture value
 int UserValue;           // The variable of the user setting value    
-
+String greetString = "Enter Mode of Operation: \nrun - start normal operating procedure \ntest - enter test bench mode";
 void setup() {
   // Initial Setup
   Serial.begin(9600); // Serial port
@@ -26,7 +26,7 @@ void setup() {
   digitalWrite(Soilpower, LOW); // Set to LOW so no power is flowing through the sensor
 
   while (!Serial);
-  Serial.println("Enter Mode of Operation: \n1. run - start normal operating procedure \n2. test - enter test bench mode");
+  Serial.println(greetString);
 }
 
 // Moisture Reading Function
@@ -86,21 +86,27 @@ void loop() {
       Serial.println("* Choose debug function");
       Serial.println("* Press 1 for valve functions \n* Press 2 for sensor functions");
       Serial.println("* Waiting for user input...");
+      while (Serial.available() == 0) {}
       String testcmd = Serial.readString();
 
       if(testcmd == "1\n"){
         Serial.println("** ENTERED VALVE MODE *");
         Serial.println("** Choose debug function");
         Serial.println("** Press 1 to open valve \n** Press 2 to close valve \n** Press 3 to open valve for 5-30 seconds (potentiometer)");
+        while (Serial.available() == 0) {}
         String valvecmd = Serial.readString();
 
         if(valvecmd == "1\n"){
           Serial.println("*** Opening valve");
           digitalWrite(Valvepower, HIGH);
+          Serial.println(greetString);
+          return 0;
         }
         else if(valvecmd == "2\n"){
           Serial.println("*** Closing valve");
           digitalWrite(Valvepower, LOW);
+          Serial.println(greetString);
+          return 0;
         }
         else if(valvecmd == "3\n"){
           Serial.println("*** Opening valve for 5-30 seconds...");
@@ -111,6 +117,8 @@ void loop() {
           digitalWrite(Valvepower, HIGH);
           delay(UserValue);
           digitalWrite(Valvepower, LOW);
+          Serial.println(greetString);
+          return 0;
         }
 
       }

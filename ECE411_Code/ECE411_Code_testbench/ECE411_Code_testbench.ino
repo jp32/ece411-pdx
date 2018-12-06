@@ -40,7 +40,7 @@ void setup() {
 int readMoisture()
 {
   digitalWrite(Soilpower, HIGH);  // Turn on the transistor
-  delay(300); // Wait 10 milliseconds
+  delay(10); // Wait 10 milliseconds
   int val = analogRead(soilpin);  // Read the moisture value
   Serial.print("Moisture value = ");
   Serial.println(val);   // Print the value back to the serial port
@@ -78,7 +78,7 @@ void loop() {
       // serial print "done waiting two seconsd - reading moisture"
       sensorValue = readMoisture(); // Read the moisture level
       UserValue   = readUserSetting(); //Read the user setting
-      if (sensorValue <= M_LowerBound && (sensorValue > 100) {
+      if (sensorValue <= M_LowerBound && (sensorValue > 100)) {
         Serial.print("Current moisture value = ");
         Serial.println(sensorValue);
         Serial.print("Current user value = ");
@@ -177,14 +177,22 @@ void loop() {
           Serial.print(sensorReadNum);
           Serial.println(" times and collecting average...");
 
-          int sum = 0;
+          long sum = 0;
+          int moist = 0;
           for (int i = 0; i < sensorReadNum; i++)
           {
-            sum = sum + readMoisture();
+           
+            moist = readMoisture();
+            sum = sum + moist;
+            Serial.println(sum);
           }
 
           Serial.print("Average moisture = ");
           Serial.println(sum/sensorReadNum);
+          Serial.print("Sum = ");
+          Serial.println(sum);
+          Serial.print("sensorReadNum = ");
+          Serial.println(sensorReadNum);
           
           Serial.println(greetString);
           

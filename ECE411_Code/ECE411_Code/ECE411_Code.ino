@@ -61,7 +61,7 @@ int valveControl()
 
 void loop() {
   // The loop will keep check the moisture level of the soil
-  Serial.print("Wait for two seconds");
+  Serial.println("Wait for two seconds");
   delay(2000);
   // serial print "done waiting two seconsd - reading moisture"
   sensorValue = readMoisture(); // Read the moisture level

@@ -66,7 +66,7 @@ void loop() {
   // serial print "done waiting two seconsd - reading moisture"
   sensorValue = readMoisture(); // Read the moisture level
   UserValue   = readUserSetting(); //Read the user setting
-  if (sensorValue <= M_LowerBound && (sensorValue > 100)) {
+  if (sensorValue <= M_LowerBound && (sensorValue > 600)) {
   Serial.print("Current moisture value = ");
     Serial.println(sensorValue);
     Serial.print("Current user value = ");

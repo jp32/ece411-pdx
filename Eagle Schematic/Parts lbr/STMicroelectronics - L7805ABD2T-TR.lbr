@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE eagle SYSTEM "eagle.dtd">
+<eagle>
+    <drawing>
+        <grid unitdist="mm" unit="mm"/>
+        <layers>
+            <layer name="Top" color="4" number="1" visible="yes" active="yes" fill="1"/>
+            <layer name="tKeepout" color="0" number="4" visible="yes" active="yes" fill="1"/>
+            <layer name="Bottom" color="4" number="16" visible="yes" active="yes" fill="1"/>
+            <layer name="tPlace" color="7" number="21" visible="yes" active="yes" fill="1"/>
+            <layer name="bPlace" color="7" number="22" visible="yes" active="yes" fill="1"/>
+            <layer name="tNames" color="7" number="25" visible="yes" active="yes" fill="1"/>
+            <layer name="bNames" color="7" number="26" visible="yes" active="yes" fill="1"/>
+            <layer name="tValues" color="7" number="27" visible="yes" active="yes" fill="1"/>
+            <layer name="bValues" color="7" number="28" visible="yes" active="yes" fill="1"/>
+            <layer name="tStop" color="7" number="29" visible="yes" active="yes" fill="1"/>
+            <layer name="bStop" color="7" number="30" visible="yes" active="yes" fill="1"/>
+            <layer name="tCream" color="7" number="31" visible="yes" active="yes" fill="1"/>
+            <layer name="bCream" color="7" number="32" visible="yes" active="yes" fill="1"/>
+            <layer name="bKeepout" color="0" number="40" visible="yes" active="yes" fill="1"/>
+            <layer name="tRestrict" color="4" number="41" visible="yes" active="yes" fill="1"/>
+            <layer name="bRestrict" color="4" number="42" visible="yes" active="yes" fill="1"/>
+            <layer name="tDocu" color="7" number="51" visible="yes" active="yes" fill="1"/>
+            <layer name="bDocu" color="7" number="52" visible="yes" active="yes" fill="1"/>
+            <layer name="Nets" color="2" number="91" visible="yes" active="yes" fill="1"/>
+            <layer name="Busses" color="1" number="92" visible="yes" active="yes" fill="1"/>
+            <layer name="Pins" color="2" number="93" visible="yes" active="yes" fill="1"/>
+            <layer name="Symbols" color="4" number="94" visible="yes" active="yes" fill="1"/>
+            <layer name="Names" color="7" number="95" visible="yes" active="yes" fill="1"/>
+            <layer name="Values" color="7" number="96" visible="yes" active="yes" fill="1"/>
+            <layer name="Info" color="7" number="97" visible="yes" active="yes" fill="1"/>
+            <layer name="Guide" color="6" number="98" visible="yes" active="yes" fill="1"/>
+        </layers>
+        <library name="Upverter Library">
+            <description>Upverter Parts Library
+
+Created by Upverter.com</description>
+            <packages>
+                <package name="STMICROELECTRONICS_L7805ABD2T-TR_0">
+                    <description>PM-REG-L4940-SOT3</description>
+                    <wire layer="21" y2="5.2" width="0.15" x2="-3.0" y1="-5.2" x1="-3.0"/>
+                    <wire layer="21" y2="-5.2" width="0.15" x2="-1.4" y1="-5.2" x1="-3.0"/>
+                    <wire layer="21" y2="5.2" width="0.15" x2="-1.4" y1="5.2" x1="-3.0"/>
+                    <wire layer="51" y2="-5.2" width="0.1" x2="6.35" y1="-5.2" x1="-3.0"/>
+                    <wire layer="51" y2="5.2" width="0.1" x2="6.35" y1="5.2" x1="-3.0"/>
+                    <wire layer="51" y2="5.2" width="0.1" x2="6.35" y1="-5.2" x1="6.35"/>
+                    <wire layer="51" y2="5.2" width="0.1" x2="-3.0" y1="-5.2" x1="-3.0"/>
+                    <wire layer="41" y2="5.3" width="0.1" x2="-8.1" y1="-5.3" x1="-8.1"/>
+                    <wire layer="41" y2="5.3" width="0.1" x2="8.1" y1="5.3" x1="-8.1"/>
+                    <wire layer="41" y2="-5.3" width="0.1" x2="8.1" y1="5.3" x1="8.1"/>
+                    <wire layer="41" y2="-5.3" width="0.1" x2="-8.1" y1="-5.3" x1="8.1"/>
+                    <text layer="25" align="bottom-left" y="5.3" x="-9.1" rot="R0" size="1.0">&gt;NAME</text>
+                    <circle y="3.565" x="-6.25" layer="21" radius="0.125" width="0.25"/>
+                    <smd layer="1" thermals="yes" name="4" stop="yes" roundness="0" dx="10.35" dy="9.0" y="-0.0" x="3.5" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="3" stop="yes" roundness="0" dx="0.95" dy="3.5" y="-2.54" x="-6.25" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="1" stop="yes" roundness="0" dx="0.95" dy="3.5" y="2.54" x="-6.25" rot="R90" cream="yes"/>
+                </package>
+                <package name="STMICROELECTRONICS_L7805ABD2T-TR_1">
+                    <description>PM-REG-L4940-SOT3</description>
+                    <wire layer="21" y2="5.2" width="0.15" x2="-2.95" y1="-5.2" x1="-2.95"/>
+                    <wire layer="21" y2="-5.2" width="0.15" x2="-1.5" y1="-5.2" x1="-2.95"/>
+                    <wire layer="21" y2="5.2" width="0.15" x2="-1.5" y1="5.2" x1="-2.95"/>
+                    <wire layer="51" y2="-5.2" width="0.1" x2="6.4" y1="-5.2" x1="-2.95"/>
+                    <wire layer="51" y2="5.2" width="0.1" x2="6.4" y1="5.2" x1="-2.95"/>
+                    <wire layer="51" y2="5.2" width="0.1" x2="6.4" y1="-5.2" x1="6.4"/>
+                    <wire layer="51" y2="5.2" width="0.1" x2="-2.95" y1="-5.2" x1="-2.95"/>
+                    <wire layer="41" y2="5.45" width="0.1" x2="-8.45" y1="-5.45" x1="-8.45"/>
+                    <wire layer="41" y2="5.45" width="0.1" x2="8.45" y1="5.45" x1="-8.45"/>
+                    <wire layer="41" y2="-5.45" width="0.1" x2="8.45" y1="5.45" x1="8.45"/>
+                    <wire layer="41" y2="-5.45" width="0.1" x2="-8.45" y1="-5.45" x1="8.45"/>
+                    <text layer="25" align="bottom-left" y="5.45" x="-9.45" rot="R0" size="1.0">&gt;NAME</text>
+                    <circle y="3.59" x="-6.3" layer="21" radius="0.125" width="0.25"/>
+                    <smd layer="1" thermals="yes" name="4" stop="yes" roundness="0" dx="10.4" dy="9.3" y="-0.0" x="3.55" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="3" stop="yes" roundness="0" dx="1.0" dy="3.8" y="-2.54" x="-6.3" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="1" stop="yes" roundness="0" dx="1.0" dy="3.8" y="2.54" x="-6.3" rot="R90" cream="yes"/>
+                </package>
+                <package name="STMICROELECTRONICS_L7805ABD2T-TR_2">
+                    <description>PM-REG-L4940-SOT3</description>
+                    <wire layer="21" y2="5.2" width="0.15" x2="-2.9" y1="-5.2" x1="-2.9"/>
+                    <wire layer="21" y2="-5.2" width="0.15" x2="-1.6" y1="-5.2" x1="-2.9"/>
+                    <wire layer="21" y2="5.2" width="0.15" x2="-1.6" y1="5.2" x1="-2.9"/>
+                    <wire layer="51" y2="-5.2" width="0.1" x2="6.45" y1="-5.2" x1="-2.9"/>
+                    <wire layer="51" y2="5.2" width="0.1" x2="6.45" y1="5.2" x1="-2.9"/>
+                    <wire layer="51" y2="5.2" width="0.1" x2="6.45" y1="-5.2" x1="6.45"/>
+                    <wire layer="51" y2="5.2" width="0.1" x2="-2.9" y1="-5.2" x1="-2.9"/>
+                    <wire layer="41" y2="5.725" width="0.1" x2="-8.9" y1="-5.725" x1="-8.9"/>
+                    <wire layer="41" y2="5.725" width="0.1" x2="8.9" y1="5.725" x1="-8.9"/>
+                    <wire layer="41" y2="-5.725" width="0.1" x2="8.9" y1="5.725" x1="8.9"/>
+                    <wire layer="41" y2="-5.725" width="0.1" x2="-8.9" y1="-5.725" x1="8.9"/>
+                    <text layer="25" align="bottom-left" y="5.725" x="-9.9" rot="R0" size="1.0">&gt;NAME</text>
+                    <circle y="3.615" x="-6.35" layer="21" radius="0.125" width="0.25"/>
+                    <smd layer="1" thermals="yes" name="4" stop="yes" roundness="0" dx="10.45" dy="9.6" y="0.0" x="3.6" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="3" stop="yes" roundness="0" dx="1.05" dy="4.1" y="-2.54" x="-6.35" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="1" stop="yes" roundness="0" dx="1.05" dy="4.1" y="2.54" x="-6.35" rot="R90" cream="yes"/>
+                </package>
+            </packages>
+            <symbols>
+                <symbol name="STMICROELECTRONICS_L7805ABD2T-TR_0_0">
+                    <description>PM-REG-L4940-SOT3</description>
+                    <wire layer="94" y2="-5.08" width="0.508" x2="0.0" y1="-12.7" x1="0.0"/>
+                    <wire layer="94" y2="-5.08" width="0.508" x2="15.24" y1="-5.08" x1="0.0"/>
+                    <wire layer="94" y2="-12.7" width="0.508" x2="15.24" y1="-5.08" x1="15.24"/>
+                    <wire layer="94" y2="-12.7" width="0.508" x2="0.0" y1="-12.7" x1="15.24"/>
+                    <wire layer="94" y2="-7.62" width="0.15" x2="0.0" y1="-7.62" x1="0.0"/>
+                    <wire layer="94" y2="-12.7" width="0.15" x2="7.62" y1="-12.7" x1="7.62"/>
+                    <wire layer="94" y2="-7.62" width="0.15" x2="15.24" y1="-7.62" x1="15.24"/>
+                    <text layer="94" align="bottom-left" y="-12.192" x="5.08" rot="R0" size="2.54">GND</text>
+                    <text layer="95" align="top-left" y="-2.54" x="0.0" rot="R0" size="2.54">&gt;NAME</text>
+                    <text layer="95" align="top-left" y="-17.78" x="0.0" rot="R0" size="2.54">L7805ABD2T-TR</text>
+                    <pin direction="pwr" name="IN" visible="both" length="middle" y="-7.62" x="-5.08"/>
+                    <pin direction="pwr" name="GND" visible="pad" length="middle" y="-17.78" x="7.62" rot="R90"/>
+                    <pin direction="pwr" name="OUT" visible="both" length="middle" y="-7.62" x="20.32" rot="R180"/>
+                </symbol>
+            </symbols>
+            <devicesets>
+                <deviceset prefix="U" name="STMICROELECTRONICS_L7805ABD2T-TR">
+                    <description>PM-REG-L4940-SOT3</description>
+                    <gates>
+                        <gate name="G$0" symbol="STMICROELECTRONICS_L7805ABD2T-TR_0_0" x="0"/>
+                    </gates>
+                    <devices>
+                        <device name="STMICROELECTRONICS_L7805ABD2T-TR_0_0" package="STMICROELECTRONICS_L7805ABD2T-TR_0">
+                            <connects>
+                                <connect gate="G$0" pad="1" pin="IN"/>
+                                <connect gate="G$0" pad="3" pin="OUT"/>
+                                <connect gate="G$0" pad="4" pin="GND"/>
+                            </connects>
+                            <technologies>
+                                <technology>
+                                    <attribute name="ciiva_ids" value="1170709"/>
+                                    <attribute name="Package_Version" value="2011"/>
+                                    <attribute name="Component_Link_1_Description" value="Manufacturer URL"/>
+                                    <attribute name="vault_guid" value="F9E86E7E-C0C5-4482-A014-8AF9A03DEA17"/>
+                                    <attribute name="MPN" value="L7805ABD2T-TR"/>
+                                    <attribute name="Component_Link_1_URL" value="http://www.st.com"/>
+                                    <attribute name="imported" value="yes"/>
+                                    <attribute name="prefix" value="U"/>
+                                    <attribute name="import_ts" value="1521848318"/>
+                                    <attribute name="Datasheet_Version" value="16/11/2011"/>
+                                    <attribute name="Package_Description" value="3-Pin Transistor Outline Package 2.54 mm Pitch, 15.4 mm Lead Span (D2PAK)"/>
+                                    <attribute name="datasheet" value="http://www.st.com/internet/com/TECHNICAL_RESOURCES/TECHNICAL_LITERATURE/DATASHEET/CD00000444.pdf"/>
+                                    <attribute name="vault_revision" value="EBC7F444-4DCD-48A7-B3F0-D4FCAD21B5F4"/>
+                                    <attribute name="footprint_variant_name_0" value="Level C"/>
+                                    <attribute name="release_date" value="1329863996"/>
+                                    <attribute name="footprint_variant_name_2" value="Level A"/>
+                                    <attribute name="imported_from" value="vault"/>
+                                    <attribute name="footprint_variant_name_1" value="Level B"/>
+                                    <attribute name="MF" value="STMicroelectronics"/>
+                                    <attribute name="package" value="TO-263"/>
+                                </technology>
+                            </technologies>
+                        </device>
+                        <device name="STMICROELECTRONICS_L7805ABD2T-TR_0_1" package="STMICROELECTRONICS_L7805ABD2T-TR_1">
+                            <connects>
+                                <connect gate="G$0" pad="1" pin="IN"/>
+                                <connect gate="G$0" pad="3" pin="OUT"/>
+                                <connect gate="G$0" pad="4" pin="GND"/>
+                            </connects>
+                            <technologies>
+                                <technology>
+                                    <attribute name="ciiva_ids" value="1170709"/>
+                                    <attribute name="Package_Version" value="2011"/>
+                                    <attribute name="Component_Link_1_Description" value="Manufacturer URL"/>
+                                    <attribute name="vault_guid" value="F9E86E7E-C0C5-4482-A014-8AF9A03DEA17"/>
+                                    <attribute name="MPN" value="L7805ABD2T-TR"/>
+                                    <attribute name="Component_Link_1_URL" value="http://www.st.com"/>
+                                    <attribute name="imported" value="yes"/>
+                                    <attribute name="prefix" value="U"/>
+                                    <attribute name="import_ts" value="1521848318"/>
+                                    <attribute name="Datasheet_Version" value="16/11/2011"/>
+                                    <attribute name="Package_Description" value="3-Pin Transistor Outline Package 2.54 mm Pitch, 15.4 mm Lead Span (D2PAK)"/>
+                                    <attribute name="datasheet" value="http://www.st.com/internet/com/TECHNICAL_RESOURCES/TECHNICAL_LITERATURE/DATASHEET/CD00000444.pdf"/>
+                                    <attribute name="vault_revision" value="EBC7F444-4DCD-48A7-B3F0-D4FCAD21B5F4"/>
+                                    <attribute name="footprint_variant_name_0" value="Level C"/>
+                                    <attribute name="release_date" value="1329863996"/>
+                                    <attribute name="footprint_variant_name_2" value="Level A"/>
+                                    <attribute name="imported_from" value="vault"/>
+                                    <attribute name="footprint_variant_name_1" value="Level B"/>
+                                    <attribute name="MF" value="STMicroelectronics"/>
+                                    <attribute name="package" value="TO-263"/>
+                                </technology>
+                            </technologies>
+                        </device>
+                        <device name="STMICROELECTRONICS_L7805ABD2T-TR_0_2" package="STMICROELECTRONICS_L7805ABD2T-TR_2">
+                            <connects>
+                                <connect gate="G$0" pad="1" pin="IN"/>
+                                <connect gate="G$0" pad="3" pin="OUT"/>
+                                <connect gate="G$0" pad="4" pin="GND"/>
+                            </connects>
+                            <technologies>
+                                <technology>
+                                    <attribute name="ciiva_ids" value="1170709"/>
+                                    <attribute name="Package_Version" value="2011"/>
+                                    <attribute name="Component_Link_1_Description" value="Manufacturer URL"/>
+                                    <attribute name="vault_guid" value="F9E86E7E-C0C5-4482-A014-8AF9A03DEA17"/>
+                                    <attribute name="MPN" value="L7805ABD2T-TR"/>
+                                    <attribute name="Component_Link_1_URL" value="http://www.st.com"/>
+                                    <attribute name="imported" value="yes"/>
+                                    <attribute name="prefix" value="U"/>
+                                    <attribute name="import_ts" value="1521848318"/>
+                                    <attribute name="Datasheet_Version" value="16/11/2011"/>
+                                    <attribute name="Package_Description" value="3-Pin Transistor Outline Package 2.54 mm Pitch, 15.4 mm Lead Span (D2PAK)"/>
+                                    <attribute name="datasheet" value="http://www.st.com/internet/com/TECHNICAL_RESOURCES/TECHNICAL_LITERATURE/DATASHEET/CD00000444.pdf"/>
+                                    <attribute name="vault_revision" value="EBC7F444-4DCD-48A7-B3F0-D4FCAD21B5F4"/>
+                                    <attribute name="footprint_variant_name_0" value="Level C"/>
+                                    <attribute name="release_date" value="1329863996"/>
+                                    <attribute name="footprint_variant_name_2" value="Level A"/>
+                                    <attribute name="imported_from" value="vault"/>
+                                    <attribute name="footprint_variant_name_1" value="Level B"/>
+                                    <attribute name="MF" value="STMicroelectronics"/>
+                                    <attribute name="package" value="TO-263"/>
+                                </technology>
+                            </technologies>
+                        </device>
+                    </devices>
+                </deviceset>
+            </devicesets>
+        </library>
+    </drawing>
+</eagle>

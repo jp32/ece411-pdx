@@ -1,0 +1,24 @@
+{
+    "Header": {
+        "Comment": "All values are metric (mm)",
+        "CreationDate": "2018-11-13T01:57:23Z",
+        "GenerationSoftware": {
+            "Application": "EAGLE",
+            "Vendor": "Autodesk",
+            "Version": "9.2.2"
+        },
+        "Part": "Single"
+    },
+    "Overall": {
+        "BoardThickness": 1.57,
+        "LayerNumber": 2,
+        "Name": {
+            "ProjectId": "Group12_411_REV2"
+        },
+        "Owner": "Jonathan Lampman <jvl2@pdx.edu>",
+        "Size": {
+            "X": 58.4,
+            "Y": 45.39
+        }
+    }
+}

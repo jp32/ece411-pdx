@@ -132,25 +132,68 @@ void loop() {
       else if (testcmd == "2\n") {
         Serial.println("** ENTERED VALVE MODE *");
 
+        sensor_test:
         PrintSensorTestOptions();
 
+        while (Serial.available() == 0) {}
         String sensorCmd = Serial.readString();
         if (sensorCmd == "1\n")
         {
           Serial.println("Reading sensor once...");
+          readMoisture();
+          
+          Serial.println(greetString);
+          
+          return 0;
         }
         else if (sensorCmd == "2\n")
         {
-          Serial.println("Reading sensor x times...");
+          Serial.println("Enter number of times to read sensor.");
+          
+          while (Serial.available() == 0) {}
+          int sensorReadNum = Serial.parseInt();
+          
+          Serial.print("Reading sensor ");
+          Serial.print(sensorReadNum);
+          Serial.println(" times...");
+          
+          for (int i = 0; i < sensorReadNum; i++)
+          {
+            readMoisture();
+          }
+          
+          Serial.println(greetString);
+          
+          return 0;
         }
         else if (sensorCmd == "3\n")
         {
-          Serial.println("Reading sensor x times and collecting average...");
+          Serial.println("Enter number of times to read sensor.");
+          
+          while (Serial.available() == 0) {}
+          int sensorReadNum = Serial.parseInt();
+          
+          Serial.print("Reading sensor ");
+          Serial.print(sensorReadNum);
+          Serial.println(" times and collecting average...");
+
+          int sum = 0;
+          for (int i = 0; i < sensorReadNum; i++)
+          {
+            sum = sum + readMoisture();
+          }
+
+          Serial.print("Average moisture = ");
+          Serial.println(sum/sensorReadNum);
+          
+          Serial.println(greetString);
+          
+          return 0;
         }
         else
         {
-          Serial.println("Invalid command!");
-          // TODO:
+          Serial.println("Invalid number!");
+          goto sensor_test;
         }
       }
     }
